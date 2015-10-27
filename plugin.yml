@@ -1,0 +1,37 @@
+name: Buyeffect
+main: Buyeffect\Buyeffect
+version: 1.0.0
+api: [1.11.0]
+load: POSTWORLD
+author: haniokasai
+depend: [EconomyAPI]
+description: player can buy effect per second.(for economyapi)
+website: haniokasai.com
+
+commands:
+ Buyeffect:
+   aliases: [bf , buye]
+   description: Buyeffect commands.
+   permission: Buyeffect
+   
+permissions:
+ Buyeffect:
+  default: true
+  description: Buyeffect permissions.
+  children:
+   Buyeffect.commands:
+    default: true
+    Buyeffect: Buyeffect commands permissions.
+    children:
+      Buyeffect.commands.buy:
+       default: true
+       description: SignRandomTp command buy permission.
+      Buyeffect.commands.conf:
+       default: op
+       description: Buyeffect command config permission.
+      Buyeffect.commands.check:
+       default: true
+       description: Buyeffect command check permission.
+      Buyeffect.commands.reload:
+       default: op
+       description: Buyeffect command blockid permission.
